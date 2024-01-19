@@ -55,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 BetterFeedback.of(context).showAndUploadToDiscord(
                   channel: '#discord-feedback',
-                  discordUrl: 'https://discord.com/api/webhooks/1184473488468217916/x3Umb1v_EEWsf3octWJgPAXYM1EMmnBkTr8-W3t4Fb-ePe6aOcZ2_6AIOa2IkiG4Xc_i',
+                  discordUrl: 'https://discord.com/api/webhooks/1184473488468217916/xxxxxxxxxxxx',
                 );
               },
               child: const Text('Show Feedback view'),
