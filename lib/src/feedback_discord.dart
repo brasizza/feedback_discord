@@ -10,12 +10,13 @@ extension BetterFeedbackDiscord on FeedbackController {
     required String channel,
     required String discordUrl,
     http.Client? client,
+    required List<String> customData,
   }) {
     show(uploadToDiscord(
-      channel: channel,
-      discordUrl: discordUrl,
-      client: client,
-    ));
+        channel: channel,
+        discordUrl: discordUrl,
+        client: client,
+        customData: customData));
   }
 }
 
@@ -26,6 +27,7 @@ OnFeedbackCallback uploadToDiscord({
   required String channel,
   required String discordUrl,
   http.Client? client,
+  List<String>? customData,
 }) {
   final httpClient = client ?? http.Client();
   final baseUrl = discordUrl;
@@ -35,7 +37,7 @@ OnFeedbackCallback uploadToDiscord({
       baseUrl,
     );
     final uploadRequest = http.MultipartRequest('POST', uri)
-      ..fields['content'] = feedback.text
+      ..fields['content'] = "${feedback.text}\n${customData?.join("\n")}"
       ..files.add(http.MultipartFile.fromBytes(
         'file',
         feedback.screenshot,

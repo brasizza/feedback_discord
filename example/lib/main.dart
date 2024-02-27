@@ -2,7 +2,9 @@ import 'package:feedback_discord/feedback_discord.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const BetterFeedback(child: MyApp()));
+  runApp(const BetterFeedback(
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -55,7 +57,9 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 BetterFeedback.of(context).showAndUploadToDiscord(
                   channel: '#discord-feedback',
-                  discordUrl: 'https://discord.com/api/webhooks/1184473488468217916/x3Umb1v_EEWsf3octWJgPAXYM1EMmnBkTr8-W3t4Fb-ePe6aOcZ2_6AIOa2IkiG4Xc_i',
+                  customData: ["Empresa X", "Dados Y"],
+                  discordUrl:
+                      'https://discord.com/api/webhooks/1184473488468217916/x3Umb1v_EEWsf3octWJgPAXYM1EMmnBkTr8-W3t4Fb-ePe6aOcZ2_6AIOa2IkiG4Xc_i',
                 );
               },
               child: const Text('Show Feedback view'),
