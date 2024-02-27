@@ -58,8 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 BetterFeedback.of(context).showAndUploadToDiscord(
                   channel: '#discord-feedback',
                   customData: ["Empresa X", "Dados Y"],
-                  discordUrl:
-                      'https://discord.com/api/webhooks/1184473488468217916/x3Umb1v_EEWsf3octWJgPAXYM1EMmnBkTr8-W3t4Fb-ePe6aOcZ2_6AIOa2IkiG4Xc_i',
+                  discordUrl: 'https://discord.com/api/webhooks/1184473488468217916/x3Umb1v_EEWsf3octWJgPAXYM1EMmnBkTr8-W3t4Fb-ePe6aOcZ2_6AIOa2IkiG4Xc_i',
                 );
               },
               child: const Text('Show Feedback view'),
