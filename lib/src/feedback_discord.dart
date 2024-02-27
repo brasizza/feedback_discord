@@ -10,13 +10,9 @@ extension BetterFeedbackDiscord on FeedbackController {
     required String channel,
     required String discordUrl,
     http.Client? client,
-    required List<String> customData,
+    List<String>? customData,
   }) {
-    show(uploadToDiscord(
-        channel: channel,
-        discordUrl: discordUrl,
-        client: client,
-        customData: customData));
+    show(uploadToDiscord(channel: channel, discordUrl: discordUrl, client: client, customData: customData));
   }
 }
 
